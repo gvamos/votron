@@ -8,5 +8,15 @@
         android:orderInCategory="100"
         android:title="@string/action_settings"
         app:showAsAction="never"/>
+    <item
+        android:id="@+id/about"
+        android:title="About"/>
+    <item
+        android:id="@+id/help"
+        android:title="Help"/>
+    
+       <item
+        android:id="@+id/register"
+        android:title="Register"/>
 
 </menu>
