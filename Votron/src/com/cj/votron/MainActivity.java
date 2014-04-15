@@ -3,6 +3,7 @@ package com.cj.votron;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -45,6 +46,7 @@ public class MainActivity extends ActionBarActivity {
             case R.id.action_settings:
                 return true;
             case R.id.voter:
+                startActivity( new Intent(this, ElectionActivity.class));
                 return true;
             case R.id.elections:
                 return true;
