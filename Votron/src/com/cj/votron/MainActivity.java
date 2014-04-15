@@ -49,12 +49,12 @@ public class MainActivity extends ActionBarActivity {
             case R.id.action_settings:
                 break;
             case R.id.voter:
-                break;
+            	System.out.println("DBG: Voters Activity");
+            	intent = new Intent(this, VotersActivity.class);
+              break;
             case R.id.elections:
-            	System.out.println("Class=" + ElectionsActivity.class.getName());
-            	System.out.println("Class=" + ElectionsActivity.class.getCanonicalName());
             	intent = new Intent(this, ElectionsActivity.class);
-               break;
+              break;
             default:
             	Log.i(this.getClass().getName(),":onOptionsItemSelected default:" + id);
                 return super.onOptionsItemSelected(item);
