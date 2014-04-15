@@ -17,36 +17,23 @@ import android.widget.ListView;
  *
  */
 public class ElectionsActivity extends Activity {
+	
 	  private ListView electionListView ;  
-	  private ArrayAdapter<String> listAdapter ;  
+	  private ArrayAdapter<String> listAdapter ; 	  
+	  private Config.Elections elections;
 	
 	  @Override  
 	  public void onCreate(Bundle savedInstanceState) {  
 	    super.onCreate(savedInstanceState); 
 	    Log.i(this.getClass().getName(),":onCreate");
-	    setContentView(R.layout.activity_elections);  
-	      
-	    // Find the ListView resource.   
-	    electionListView = (ListView) findViewById( R.id.electionsListView );  
-	  
-	    // Create and populate a List of planet names.  
-	    String[] planets = new String[] { "London", "Paris", "Chatsworth" };    
-	    ArrayList<String> planetList = new ArrayList<String>();  
-	    planetList.addAll( Arrays.asList(planets) );  
-	      
-	    // Create ArrayAdapter using the planet list.  
-	    listAdapter = new ArrayAdapter<String>(this, R.layout.simplerow, planetList);  
-	      
-	    // Add more planets. If you passed a String[] instead of a List<String>   
-	    // into the ArrayAdapter constructor, you must not add more items.   
-	    // Otherwise an exception will occur.  
-	    listAdapter.add( "Foo" );  
-	    listAdapter.add( "Bar" );  
-	    listAdapter.add( "Baz" );  
-  
-	      
-	    // Set the ArrayAdapter as the ListView's adapter.  
+	    setContentView(R.layout.activity_elections); 
+	    	      
+	    elections = Config.getInstance().getElections();
+	    elections.updateElections();  
+  	      
+	    // Shave the yak.  
+	    electionListView = (ListView) findViewById( R.id.electionsListView );  	    
+	    listAdapter = new ArrayAdapter<String>(this, R.layout.simplerow, (elections.getElectionsList()));  
 	    electionListView.setAdapter( listAdapter );        
-	  }  	
-	
+	  }  		
 }
