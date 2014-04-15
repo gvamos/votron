@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
                 <activity
-            android:name="com.cj.votron.Elections"
+            android:name="com.cj.votron.ElectionsActivity"
             android:label="Elections" >
         </activity>
     </application>

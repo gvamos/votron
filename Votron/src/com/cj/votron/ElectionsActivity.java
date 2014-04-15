@@ -8,6 +8,7 @@ import java.util.Arrays;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -15,13 +16,14 @@ import android.widget.ListView;
  * @author gvamos
  *
  */
-public class ElectionActivity extends Activity {
+public class ElectionsActivity extends Activity {
 	  private ListView electionListView ;  
 	  private ArrayAdapter<String> listAdapter ;  
 	
 	  @Override  
 	  public void onCreate(Bundle savedInstanceState) {  
-	    super.onCreate(savedInstanceState);  
+	    super.onCreate(savedInstanceState); 
+	    Log.i(this.getClass().getName(),":onCreate");
 	    setContentView(R.layout.activity_elections);  
 	      
 	    // Find the ListView resource.   

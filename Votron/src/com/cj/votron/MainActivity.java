@@ -5,6 +5,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -42,17 +43,27 @@ public class MainActivity extends ActionBarActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        switch (item.getItemId()) {
+        System.out.println("DBG: onOptionsItemSelected:" + id);
+        Intent intent = null;
+        switch (id) {
             case R.id.action_settings:
-                return true;
+                break;
             case R.id.voter:
-                startActivity( new Intent(this, ElectionActivity.class));
-                return true;
+                break;
             case R.id.elections:
-                return true;
+            	System.out.println("Class=" + ElectionsActivity.class.getName());
+            	System.out.println("Class=" + ElectionsActivity.class.getCanonicalName());
+            	intent = new Intent(this, ElectionsActivity.class);
+               break;
             default:
+            	Log.i(this.getClass().getName(),":onOptionsItemSelected default:" + id);
                 return super.onOptionsItemSelected(item);
         }
+        if (null != intent){
+        	System.out.println("DBG: intent action=" + intent.getAction());
+        	startActivity(intent);
+        }
+        return true;
     }
 
     /**
