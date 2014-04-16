@@ -33,6 +33,16 @@
             android:label="Voters" >
         </activity>
         
+                <activity
+            android:name="com.cj.votron.VotersActivity"
+            android:label="Voters" >
+        </activity>
+        
+        <activity
+            android:name="com.cj.votron.DebugActivity"
+            android:label="Debug" >
+        </activity>
+        
     </application>
 
 </manifest>

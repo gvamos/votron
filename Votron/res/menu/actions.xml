@@ -2,6 +2,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     >
 
+
+    
     <item
         android:id="@+id/settings"
         android:orderInCategory="1"
@@ -9,15 +11,21 @@
         android:title="Settings"/>
     
     <item
-        android:id="@+id/voter"
+        android:id="@+id/voters"
         android:orderInCategory="2"
         app:showAsAction="ifRoom"
-        android:title="Voter"/>
+        android:title="Voters"/>
     
     <item
         android:id="@+id/elections"
         android:orderInCategory="3"
         app:showAsAction="ifRoom"
         android:title="Elections"/>
+    
+    <item
+        android:id="@+id/debug"
+        android:orderInCategory="4"
+        app:showAsAction="ifRoom"
+        android:title="Debug"/>
 
 </menu>
